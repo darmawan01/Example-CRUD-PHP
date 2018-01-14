@@ -69,27 +69,29 @@ class karyawan{
         $pdd = $_POST['pendidikan'];
         $bidang = $_POST['bidang'];
 
-        // $file_dir = "image/";
-        // $file_name = $_FILES['images']['name'];
-        // $file_tmp = $_FILES['images']['tmp_name'];
+        $file_dir = "image/";
+        $file_name = $_FILES['images']['name'];
+        $file_tmp = $_FILES['images']['tmp_name'];
 
-        // if(isset($file_name)){
-        //     if(empty($file_name)){
-        //         echo "Foto Wajib Ada";
-        //     }else{
-        //         if (move_uploaded_file($file_tmp, $file_dir.$file_name)){
-        //             echo "Success";
-        //         }else{
-        //             echo "Failed";
+        $destionation = $file_dir.$file_name;
+
+        if(isset($file_name)){
+            if(empty($file_name)){
+                echo "Foto Wajib Ada";
+            }else{
+                if (move_uploaded_file($file_tmp, $destionation)){
+                    echo "Success";
+                }else{
+                    echo "Failed";
                     
 
-        //         }
-        //     }
-        // }
+                }
+            }
+        }
   
         $sql = mysqli_query($this->koneksi(), 
                 "INSERT INTO tbl_karyawan VALUES 
-                    (NULL, '$nik', '$nama', '$tmp_lahir', '$tgl_lahir', '$gender', '$alamat', '$tlp', '$pdd', '$bidang', NULL)
+                    (NULL, '$nik', '$nama', '$tmp_lahir', '$tgl_lahir', '$gender', '$alamat', '$tlp', '$pdd', '$bidang', '$destionation')
                 "                    
 			);
 
@@ -117,24 +119,27 @@ class karyawan{
         $pdd = $_POST['pendidikan'];
         $bidang = $_POST['bidang'];
 
-        // $file_dir = "image/";
-        // $file_name = $_FILES['images']['name'];
-        // $file_tmp = $_FILES['images']['tmp_name'];
+        $file_dir = "/image";
+        $file_name = $_FILES['images']['name'];
+        $file_tmp = $_FILES['images']['tmp_name'];
 
-        // if(isset($file_name)){
-        //     if(empty($file_name)){
-        //         echo "Foto Wajib Ada";
-        //     }else{
-        //         if (move_uploaded_file($file_tmp, $file_dir.$file_name)){
-        //             echo "Success";
-        //         }else{
-        //             echo "Failed";
+        $destionation = $file_dir.$file_name;
+
+        if(isset($file_name)){
+            if(empty($file_name)){
+                echo "Foto Wajib Ada";
+            }else{
+                if (move_uploaded_file($file_tmp, $destionation)){
+                    echo "Success";
+                }else{
+                    echo "Failed";
                     
 
-        //         }
-        //     }
-        // }
-  
+                }
+            }
+        }
+        
+        
         $sql = mysqli_query($this->koneksi(), 
 				"UPDATE tbl_karyawan SET    
                     nik = '$nik',
@@ -146,7 +151,7 @@ class karyawan{
                     tlp = '$tlp',
                     pdd_terakhir = '$pdd',
                     bidang = '$bidang',
-                    image = ''
+                    img = '$destionation'
                     WHERE id='$id'"
 			);
 

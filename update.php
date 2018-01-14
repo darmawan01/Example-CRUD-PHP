@@ -261,7 +261,7 @@ if(empty($_SESSION['username'])){
                                         <label for="">Gender</label>
                                         <br/>       
                                         <input <?php if ($row->gender == "Laki" ) echo 'checked' ?> type="radio" name="jk" value="Laki" id="jk" > Laki-Laki
-                                        <input  <?php if ($row->gender == "Perempupan" ) echo 'checked' ?>id="jk" type="radio" name="jk" value "Perempuan"> Perempuan
+                                        <input  <?php if ($row->gender == "Perempuan" ) echo 'checked' ?>id="jk" type="radio" name="jk" value="Perempuan"> Perempuan
                                         
                                     </div>
 
