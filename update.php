@@ -215,7 +215,7 @@ if(empty($_SESSION['username'])){
                                 <td>
                                     <div class="card">
                                         <div class="card-content">
-                                            <img id="output" alt="! image" width="200" height="200">
+                                            <img id="output" src="<?php echo $row->img ?>" alt="! image" width="200" height="200">
                                         </div>
                                         <div class="card-actions">
                                             <input type="file" name="images" class="button-input" onchange="loadFile(event)">
@@ -261,7 +261,7 @@ if(empty($_SESSION['username'])){
                                         <label for="">Gender</label>
                                         <br/>       
                                         <input <?php if ($row->gender == "Laki" ) echo 'checked' ?> type="radio" name="jk" value="Laki" id="jk" > Laki-Laki
-                                        <input  <?php if ($row->gender == "Perempuan" ) echo 'checked' ?>id="jk" type="radio" name="jk" value="Perempuan"> Perempuan
+                                        <input <?php if ($row->gender == "Perempuan" ) echo 'checked' ?> id="jk" type="radio" name="jk" value="Perempuan"> Perempuan
                                         
                                     </div>
 

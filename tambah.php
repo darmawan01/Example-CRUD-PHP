@@ -250,7 +250,7 @@ if(empty($_SESSION['username'])){
                                         <label for="">Gender</label>
                                         <br/>
                                         <input type="radio" name="jk" value="Laki" id="jk"> Laki-Laki
-                                        <input id="jk" type="radio" name="jk" value "Perempuan"> Perempuan
+                                        <input id="jk" type="radio" name="jk" value="Perempuan"> Perempuan
                                     </div>
 
                                     <div class="input-group">

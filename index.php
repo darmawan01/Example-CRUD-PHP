@@ -1,6 +1,7 @@
 <?php
 
 class karyawan{
+    
 	function koneksi(){
 		$host = "localhost";
 		$username = "root";
@@ -69,7 +70,7 @@ class karyawan{
         $pdd = $_POST['pendidikan'];
         $bidang = $_POST['bidang'];
 
-        $file_dir = "image/";
+        $file_dir = "uploaded/";
         $file_name = $_FILES['images']['name'];
         $file_tmp = $_FILES['images']['tmp_name'];
 
@@ -99,6 +100,7 @@ class karyawan{
 			header("location:index.php");
 		}else{
             echo "Data gagal Tambah".mysqli_error($sql);
+            
         }
 
     }
@@ -119,7 +121,7 @@ class karyawan{
         $pdd = $_POST['pendidikan'];
         $bidang = $_POST['bidang'];
 
-        $file_dir = "/image";
+        $file_dir = "uploaded/";
         $file_name = $_FILES['images']['name'];
         $file_tmp = $_FILES['images']['tmp_name'];
 
@@ -155,7 +157,8 @@ class karyawan{
                     WHERE id='$id'"
 			);
 
-		if ($sql) { 
+		if ($sql) {
+            
 			header("location:index.php");
 		}else{
             echo "Data gagal Ubah".mysqli_error($sql);
