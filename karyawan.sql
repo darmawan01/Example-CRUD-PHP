@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2018 at 01:20 PM
+-- Generation Time: Jan 15, 2018 at 02:00 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -56,6 +56,28 @@ INSERT INTO `tbl_karyawan` (`id`, `nik`, `nama`, `tmp_lahir`, `tgl_lahir`, `gend
 (12, '1510520159', 'Budi Roro', 'Jakarta', '2018-01-01', 'Perempuan', 'JL. Roro', '085237104882', 'S2', 'IT', 'uploaded/pamflet.jpg'),
 (13, '1510520110', 'Mustika Nila', 'Lotim', '1998-08-09', 'Perempuan', 'Jl. Lotim', '085237104882', 'S3', 'Jaringan', 'uploaded/dsc_1731_38252914345_o.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `level` varchar(10) NOT NULL,
+  `img` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `level`, `img`) VALUES
+(1, 'Darmawan', '7b902e6ff1db9f560443f2048974fd7d386975b0', 'admin', 'uploaded/boot.png'),
+(2, 'user', 'd7316a3074d562269cf4302e4eed46369b523687', 'user', '');
+
 --
 -- Indexes for dumped tables
 --
@@ -68,6 +90,12 @@ ALTER TABLE `tbl_karyawan`
   ADD UNIQUE KEY `nik` (`nik`);
 
 --
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -76,6 +104,11 @@ ALTER TABLE `tbl_karyawan`
 --
 ALTER TABLE `tbl_karyawan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

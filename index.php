@@ -1,13 +1,13 @@
 <?php
 
 class karyawan{
-    
+
 	function koneksi(){
 		$host = "localhost";
 		$username = "root";
 		$password = "parkour88";
 		$database = "karyawan";
-		return mysqli_connect($host, $username, $password, $database);
+		return mysqli_connect($host, $username, $password, $database) or die ('Database connection problem.');
     }
     
     function login(){
